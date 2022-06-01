@@ -1,0 +1,23 @@
+Users can search course data by keywords and phrases from course descriptions
+Users can search course data by keywords and phrases from course titles
+Users can filter course data by course ratings
+Users can filter course data by course durations
+Users can filter and facet course data by course types
+Users can filter and facet course data by course source
+Users can filter and facet course data by course level
+Users can filter and facet course data by role the course is aimed for
+Users can filter course data by intructor
+Users can filter and facet course data by technology the course is aimed for
+Users can filter and facet course data by skills the course teaches
+Users can filter course data by popularity of the courses
+Users can filter course data by rating of the courses
+Users can filter course data by rating counts of the courses
+Users can sort course data based on duration
+Users can sort course data based on popularity
+Users can sort course data based on rating
+Users can sort course data based on rating count
+Users can sort course data based on review
+Course data should be enriched with profiles of each instructor so users can see them
+Users can search curated library of open access journal articles by keywords, phrases, authors, and author institutions
+Users can search curated library of open access journal articles by publication name, publisher, and publication date
+Users can see a DOI URL with each search result

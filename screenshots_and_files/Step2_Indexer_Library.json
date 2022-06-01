@@ -1,0 +1,64 @@
+{
+    "@odata.context": "https://projectthreecognitivesearch.search.windows.net/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DA435980E8903A\"",
+    "name": "library-indexer",
+    "description": "",
+    "dataSourceName": "library",
+    "skillsetName": "library-skillset",
+    "targetIndexName": "azureblob-index",
+    "disabled": null,
+    "schedule": {
+      "interval": "PT1H",
+      "startTime": "2022-05-31T22:44:12.016Z"
+    },
+    "parameters": {
+      "batchSize": null,
+      "maxFailedItems": 0,
+      "maxFailedItemsPerBatch": 0,
+      "base64EncodeKeys": null,
+      "configuration": {
+        "dataToExtract": "contentAndMetadata",
+        "parsingMode": "default",
+        "imageAction": "generateNormalizedImages",
+        "indexedFileNameExtensions": ".pdf"
+      }
+    },
+    "fieldMappings": [
+      {
+        "sourceFieldName": "metadata_storage_path",
+        "targetFieldName": "metadata_storage_path",
+        "mappingFunction": {
+          "name": "base64Encode",
+          "parameters": null
+        }
+      }
+    ],
+    "outputFieldMappings": [
+      {
+        "sourceFieldName": "/document/merged_content/authors",
+        "targetFieldName": "authors"
+      },
+      {
+        "sourceFieldName": "/document/merged_content/institutions",
+        "targetFieldName": "institutions"
+      },
+      {
+        "sourceFieldName": "/document/merged_content/key_phrases",
+        "targetFieldName": "key_phrases"
+      },
+      {
+        "sourceFieldName": "/document/merged_content",
+        "targetFieldName": "merged_content"
+      },
+      {
+        "sourceFieldName": "/document/normalized_images/*/text",
+        "targetFieldName": "text"
+      },
+      {
+        "sourceFieldName": "/document/normalized_images/*/layoutText",
+        "targetFieldName": "layoutText"
+      }
+    ],
+    "cache": null,
+    "encryptionKey": null
+  }
