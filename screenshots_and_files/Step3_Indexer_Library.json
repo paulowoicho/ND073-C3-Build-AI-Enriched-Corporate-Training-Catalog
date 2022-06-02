@@ -1,0 +1,54 @@
+{
+    "@odata.context": "https://projectthreecognitivesearch.search.windows.net/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DA44B7A7978E05\"",
+    "name": "library-indexer",
+    "description": "",
+    "dataSourceName": "library",
+    "skillsetName": "library-skillset",
+    "targetIndexName": "library-index",
+    "disabled": null,
+    "schedule": {
+      "interval": "PT1H",
+      "startTime": "2022-06-02T13:47:57.341Z"
+    },
+    "parameters": {
+      "batchSize": null,
+      "maxFailedItems": 0,
+      "maxFailedItemsPerBatch": 0,
+      "base64EncodeKeys": null,
+      "configuration": {
+        "dataToExtract": "contentAndMetadata",
+        "parsingMode": "default"
+      }
+    },
+    "fieldMappings": [
+      {
+        "sourceFieldName": "metadata_storage_path",
+        "targetFieldName": "metadata_storage_path",
+        "mappingFunction": {
+          "name": "base64Encode",
+          "parameters": null
+        }
+      }
+    ],
+    "outputFieldMappings": [
+      {
+        "sourceFieldName": "/document/doi",
+        "targetFieldName": "doi"
+      },
+      {
+        "sourceFieldName": "/document/publicationDate",
+        "targetFieldName": "publicationDate"
+      },
+      {
+        "sourceFieldName": "/document/publicationName",
+        "targetFieldName": "publicationName"
+      },
+      {
+        "sourceFieldName": "/document/publisher",
+        "targetFieldName": "publisher"
+      }
+    ],
+    "cache": null,
+    "encryptionKey": null
+  }

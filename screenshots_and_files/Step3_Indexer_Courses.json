@@ -1,0 +1,45 @@
+{
+    "@odata.context": "https://projectthreecognitivesearch.search.windows.net/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DA44B07621F237\"",
+    "name": "courses-indexer",
+    "description": "",
+    "dataSourceName": "courses",
+    "skillsetName": "azureblob-skillset",
+    "targetIndexName": "courses-index",
+    "disabled": null,
+    "schedule": null,
+    "parameters": {
+        "batchSize": null,
+        "maxFailedItems": 0,
+        "maxFailedItemsPerBatch": 0,
+        "base64EncodeKeys": null,
+        "configuration": {
+            "dataToExtract": "contentAndMetadata",
+            "parsingMode": "delimitedText",
+            "firstLineContainsHeaders": true,
+            "delimitedTextDelimiter": ",",
+            "delimitedTextHeaders": ""
+        }
+    },
+    "fieldMappings": [
+        {
+            "sourceFieldName": "RowKey",
+            "targetFieldName": "RowKey",
+            "mappingFunction": {
+                "name": "base64Encode"
+            }
+        }
+    ],
+    "outputFieldMappings": [
+        {
+            "sourceFieldName": "/document/description/skills",
+            "targetFieldName": "skills"
+        },
+        {
+            "sourceFieldName": "/document/instructor_profile",
+            "targetFieldName": "instructor_profile"
+        }
+    ],
+    "cache": null,
+    "encryptionKey": null
+}

@@ -1,36 +1,36 @@
 {
-    "@odata.context": "https://projectthreecognitivesearch.search.windows.net/$metadata#skillsets/$entity",
-    "@odata.etag": "\"0x8DA4355D8EE8014\"",
-    "name": "courses-skillset",
-    "description": "Skillset created from the portal. skillsetName: courses-skillset; contentField: description; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
-    "skills": [
-      {
-        "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
-        "name": "#1",
-        "description": null,
-        "context": "/document/description",
-        "defaultLanguageCode": "en",
-        "maxKeyPhraseCount": null,
-        "modelVersion": null,
-        "inputs": [
-          {
-            "name": "text",
-            "source": "/document/description"
-          }
-        ],
-        "outputs": [
-          {
-            "name": "keyPhrases",
-            "targetName": "skills"
-          }
-        ]
-      }
-    ],
-    "cognitiveServices": {
-      "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
-      "description": "/subscriptions/f49e4f3a-a2de-4c88-94d0-30849314b513/resourceGroups/aind-197220/providers/Microsoft.CognitiveServices/accounts/enhancedcognitiveservice",
-      "key": "27f0cf70c3eb4527b904fb6eb4a2834c"
-    },
-    "knowledgeStore": null,
-    "encryptionKey": null
-  }
+  "@odata.context": "https://projectthreecognitivesearch.search.windows.net/$metadata#skillsets/$entity",
+  "@odata.etag": "\"0x8DA44A696CB54DC\"",
+  "name": "azureblob-skillset",
+  "description": "Skillset created from the portal. skillsetName: azureblob-skillset; contentField: description; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+      "name": "#1",
+      "description": null,
+      "context": "/document/description",
+      "defaultLanguageCode": "en",
+      "maxKeyPhraseCount": null,
+      "modelVersion": null,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/description"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "keyPhrases",
+          "targetName": "skills"
+        }
+      ]
+    }
+  ],
+  "cognitiveServices": {
+    "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
+    "description": "/subscriptions/f49e4f3a-a2de-4c88-94d0-30849314b513/resourceGroups/aind-197220/providers/Microsoft.CognitiveServices/accounts/enhancedcognitiveservice",
+    "key": "27f0cf70c3eb4527b904fb6eb4a2834c"
+  },
+  "knowledgeStore": null,
+  "encryptionKey": null
+}

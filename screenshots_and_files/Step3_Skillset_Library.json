@@ -1,0 +1,44 @@
+{
+    "name": "library-skillset",
+    "description": "",
+    "skills": [
+      {
+        "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
+        "uri": "https://document-enhancer-function-app.azurewebsites.net/api/springerlookup?code=wVA2jlyRJx64eaCYKtC6SA0YSb8ptaOZPK-IuCrEQfwKAzFuUkJAmQ==",
+        "httpMethod": "POST",
+        "timeout": "PT30S",
+        "batchSize": 10,
+        "degreeOfParallelism": 1,
+        "name": "Springer Metadata Lookup",
+        "description": "Looks up Springer article metadata",
+        "context": "/document",
+        "inputs": [
+          {
+            "name": "ArticleName",
+            "source": "/document/metadata_title"
+          }
+        ],
+        "outputs": [
+          {
+            "name": "doi",
+            "targetName": "doi"
+          },
+          {
+            "name": "publicationDate",
+            "targetName": "publicationDate"
+          },
+          {
+            "name": "publicationName",
+            "targetName": "publicationName"
+          },
+          {
+            "name": "publisher",
+            "targetName": "publisher"
+          }
+        ]
+      }
+    ],
+    "cognitiveServices": {
+      "@odata.type": "#Microsoft.Azure.Search.DefaultCognitiveServices"
+    }
+  }
